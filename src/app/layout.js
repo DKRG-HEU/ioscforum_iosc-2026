@@ -24,7 +24,9 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        <Footer />
+        <div className="relative z-20">
+          <Footer />
+        </div>
 
         <CursorDot />
       </body>

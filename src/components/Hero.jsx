@@ -332,7 +332,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import OceanScene from "./ocean/OceanSceneClient";
-
+import EventCountdown from '@/components/EventCountdown';
+import TypingText from "@/components/animated/TypingText";
 import {
   ArrowDown,
   ArrowRight,
@@ -469,93 +470,7 @@ export default function Hero() {
       {/* =========================================
           NAVIGATION
       ========================================== */}
-      <header
-        className="relative z-10 mx-auto flex max-w-7xl
-          items-center justify-between gap-5 px-6 py-6
-          lg:px-12"
-      >
-        <a
-          href="#home"
-          aria-label="IOSC Forum home"
-          className="group flex shrink-0 items-center gap-3"
-        >
-          <span
-            className="flex h-11 w-11 items-center justify-center
-              rounded-full border border-cyan-300/40
-              bg-cyan-300/10 shadow-lg shadow-cyan-500/10
-              transition group-hover:bg-cyan-300/20"
-          >
-            <Waves className="text-cyan-300" size={25} />
-          </span>
-
-          <span>
-            <span className="block text-xl font-semibold tracking-wide">
-              IOSC Forum
-            </span>
-
-            <span
-              className="mt-0.5 block text-[9px] tracking-[0.17em]
-                text-cyan-100/60 sm:text-[10px]"
-            >
-              INTELLIGENT OCEAN SYSTEMS
-            </span>
-          </span>
-        </a>
-
-        <nav
-          aria-label="Main navigation"
-          className="hidden items-center gap-7 text-sm
-            text-white/75 lg:flex xl:gap-9"
-        >
-          <a
-            href="#home"
-            className="text-cyan-300 transition hover:text-white"
-          >
-            Home
-          </a>
-
-          <a
-            href="#about"
-            className="transition hover:text-cyan-300"
-          >
-            About
-          </a>
-
-          <a
-            href="#programme"
-            className="transition hover:text-cyan-300"
-          >
-            Programme
-          </a>
-
-          <a
-            href="#research"
-            className="transition hover:text-cyan-300"
-          >
-            Research
-          </a>
-
-          <a
-            href="#contact"
-            className="transition hover:text-cyan-300"
-          >
-            Contact
-          </a>
-        </nav>
-
-        <a
-          href="#programme"
-          className="hidden shrink-0 items-center gap-2
-            rounded-full border border-cyan-300/40
-            bg-cyan-300/[0.05] px-4 py-3 text-sm
-            transition duration-300 hover:border-cyan-300
-            hover:bg-cyan-300 hover:text-[#031426]
-            sm:inline-flex lg:px-5"
-        >
-          Explore forum
-          <ArrowUpRight size={16} />
-        </a>
-      </header>
+      
 
       {/* =========================================
           MAIN HERO CONTENT
@@ -592,24 +507,36 @@ export default function Hero() {
           </div>
 
           {/* Heading */}
-          <h1
-            className="text-4xl font-semibold leading-[1.08]
-              tracking-tight sm:text-6xl
-              lg:text-[76px] xl:text-[82px]"
-          >
-            <span className="hero-title-line block">
-              Intelligent Ocean
-            </span>
+          {/* Heading */}
+        <h1
+          className="text-4xl font-semibold leading-[1.08]
+            tracking-tight sm:text-6xl
+            lg:text-[76px] xl:text-[82px]"
+        >
+          <span className="hero-title-line block">
+            Intelligent Ocean &
+          </span>
 
-            <span
-              className="hero-title-line mt-2 block
-                bg-gradient-to-r from-cyan-200
-                via-cyan-400 to-blue-400
-                bg-clip-text text-transparent"
-            >
-              Sensing &amp; Computing
-            </span>
-          </h1>
+          <span
+            className="hero-title-line mt-2 block
+              bg-gradient-to-r from-cyan-200
+              via-cyan-400 to-blue-400
+              bg-clip-text text-transparent"
+          >
+            <TypingText
+              text={[
+                "Sensing & Computing",
+                "Sensing",
+                "Computing",
+              ]}
+              delay={50}
+              holdDelay={1800}
+              loop={true}
+              cursor={true}
+              cursorClassName="bg-cyan-300"
+            />
+          </span>
+        </h1>
 
           {/* Description */}
           <p
@@ -687,9 +614,7 @@ export default function Hero() {
                 <p className="text-xs text-white/50">
                   Date
                 </p>
-                <p className="mt-1 text-sm font-medium">
-                  To be announced
-                </p>
+                <EventCountdown />
               </div>
             </div>
 

@@ -123,3 +123,59 @@ img {
     animation: none !important;
   }
 }
+
+
+/* IOSC Forum 2026 — continuous speaker carousel */
+
+.speaker-marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.speaker-marquee-track {
+  animation: speaker-marquee-scroll 65s linear infinite;
+  will-change: transform;
+}
+
+/* Pause while the visitor explores a card */
+.speaker-marquee:hover .speaker-marquee-track,
+.speaker-marquee:focus-within .speaker-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes speaker-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Avoid unnecessary motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .speaker-marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .speaker-marquee-track > div[aria-hidden="true"] {
+    display: none;
+  }
+}
+@keyframes countFlip {
+  from {
+    opacity: 0.5;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count {
+  animation: countFlip 0.35s ease-out;
+}
+

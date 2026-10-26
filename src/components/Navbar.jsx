@@ -14,18 +14,17 @@ const links = [
   // { label: 'Themes', href: '/#themes', section: true },
   { label: 'Home', href: '/' },
   { label: 'Speakers', href: '/speakers' },
-  { label: 'Venue', href: '/venue' },
   { label: 'Schedule', href: '/forum-schedule' },
   { label: 'Organizers', href: '/organizing-committee' },
-  { label: 'Programme', href: '/#programme', section: true },
+  // { label: 'Programme', href: '/#programme', section: true },
 ];
 
-const attendingLinks = [
-  { label: 'Overview', href: '/attending' },
-  { label: 'Visa Information', href: '/attending/visa-information' },
-  { label: 'Registration', href: '/attending/registration' },
-  { label: 'Accommodation & Travel', href: '/attending/accommodation-travel' },
-];
+// const attendingLinks = [
+//   { label: 'Overview', href: '/attending' },
+//   { label: 'Visa Information', href: '/attending/visa-information' },
+//   { label: 'Registration', href: '/attending/registration' },
+//   { label: 'Accommodation & Travel', href: '/attending/accommodation-travel' },
+// ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -54,12 +53,6 @@ export default function Navbar() {
     'border-b border-white/10 py-3 text-sm text-white/80 transition hover:pl-2 hover:text-cyan-200';
 
   return (
-    // <header
-    //   onMouseMove={handleMouseMove}
-    //   onMouseEnter={() => setHovering(true)}
-    //   onMouseLeave={() => setHovering(false)}
-    //   className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-[#071a32]/90 text-white backdrop-blur-md"
-    // >
     <header
     onMouseMove={handleMouseMove}
     onMouseEnter={() => setHovering(true)}
@@ -123,7 +116,7 @@ export default function Navbar() {
           ))}
 
           {/* Attending dropdown */}
-          <div
+          {/* <div
             className="relative"
             onMouseEnter={() => setAttendingOpen(true)}
             onMouseLeave={() => setAttendingOpen(false)}
@@ -169,7 +162,7 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-          </div>
+          </div> */}
 
           <Link
             href="/#register"
@@ -220,48 +213,7 @@ export default function Navbar() {
                 </Link>
               ))}
 
-              {/* Mobile Attending dropdown */}
-              <div className="border-b border-white/10">
-                <button
-                  type="button"
-                  tabIndex={open ? 0 : -1}
-                  onClick={() => setAttendingOpen((value) => !value)}
-                  aria-expanded={attendingOpen}
-                  className="flex w-full items-center justify-between py-3 text-left text-sm text-white/80 transition hover:text-cyan-200"
-                >
-                  Attending
-                  <ChevronDown
-                    size={17}
-                    className={`transition-transform duration-200 ${
-                      attendingOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                <div
-                  className={`grid transition-[grid-template-rows,opacity] duration-200 ${
-                    attendingOpen
-                      ? 'grid-rows-[1fr] opacity-100'
-                      : 'grid-rows-[0fr] opacity-0'
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="mb-3 ml-3 border-l border-cyan-300/30 pl-3">
-                      {attendingLinks.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          tabIndex={open && attendingOpen ? 0 : -1}
-                          onClick={closeMenus}
-                          className="block py-2.5 text-sm text-white/60 transition hover:text-cyan-200"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
 
               <Link
                 href="/#register"

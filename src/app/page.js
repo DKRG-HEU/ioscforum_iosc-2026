@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <EventHighlights />
-      <Themes />
+      {/* <EventHighlights /> */}
+      {/* <Themes /> */}
       <Speakers />
-      <Programme />
-      <RegistrationCTA />
+      {/* <Programme /> */}
+      {/* <RegistrationCTA /> */}
     </>
   );
 }
