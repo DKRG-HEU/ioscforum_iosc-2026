@@ -3,7 +3,7 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CursorDot from "@/components/CursorDot";
+// import CursorDot from "@/components/CursorDot";
 
 export const metadata = {
   title: {
@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </div>
 
-        <CursorDot />
+        {/* <CursorDot /> */}
       </body>
     </html>
   );

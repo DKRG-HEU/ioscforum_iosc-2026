@@ -599,18 +599,47 @@
 // }
 
 
-
 import TiltCard from "@/components/animated/TiltCard";
 import {
   seniorOrganizers,
   organizingCommittee,
 } from "@/app/data/organizer";
 
+const BASE_PATH =
+  process.env.NODE_ENV === "production"
+    ? "/ioscforum_iosc-2026"
+    : "";
+
 export const metadata = {
   title: "Organizers | IOSC Forum 2026",
-  description: "Meet the organizers of IOSC Forum 2026.",
+  description:
+    "Meet the chairs and organizing committee of IOSC Forum 2026 at Harbin Engineering University.",
 };
 
+/* =========================
+   Section Heading
+========================= */
+function SectionHeading({ title, description }) {
+  return (
+    <div className="mb-10 text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+        {title}
+      </h2>
+
+      {description && (
+        <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-200">
+          {description}
+        </p>
+      )}
+
+      <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-cyan-400" />
+    </div>
+  );
+}
+
+/* =========================
+   Organizer Card
+========================= */
 function OrganizerCard({ person, number }) {
   return (
     <div className="mx-auto w-full max-w-sm">
@@ -628,29 +657,19 @@ function OrganizerCard({ person, number }) {
   );
 }
 
-function SectionHeading({ title, description }) {
-  return (
-    <div className="mb-10 text-center">
-      <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-        {title}
-      </h2>
-
-      {description && (
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600">
-          {description}
-        </p>
-      )}
-
-      <div className="mx-auto mt-5 h-1 w-16 rounded-full bg-cyan-500" />
-    </div>
-  );
-}
-
-function ChairSection({ title, person, number, description }) {
+/* =========================
+   Single Chair Section
+========================= */
+function ChairSection({
+  title,
+  person,
+  number,
+  description,
+}) {
   if (!person) return null;
 
   return (
-    <section className="border-b border-slate-200 px-6 py-14 md:py-16">
+    <section className="relative border-b border-white/10 bg-transparent px-6 py-14 md:py-16">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title={title}
@@ -666,13 +685,77 @@ function ChairSection({ title, person, number, description }) {
   );
 }
 
+/* =========================
+   Program Chairs
+========================= */
+function ProgramChairsSection({ people }) {
+  if (!people.length) return null;
+
+  return (
+    <section className="relative border-b border-white/10 bg-transparent px-6 py-14 md:py-16">
+      <div className="mx-auto max-w-7xl">
+        <SectionHeading
+          title="Program Chairs"
+          description="Leading the technical program, paper review process, and research sessions."
+        />
+
+        <div className="mx-auto grid max-w-5xl grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
+          {people.map((person, index) => (
+            <OrganizerCard
+              key={person.id}
+              person={person}
+              number={String(index + 2).padStart(2, "0")}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================
+   Local Organizing Committee
+========================= */
+function LocalOrganizingCommittee({ people }) {
+  return (
+    <section className="relative bg-transparent px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeading
+          title="Local Organizing Committee"
+          description="Meet the committee members supporting the planning and successful organization of IOSC Forum 2026."
+        />
+
+        <div className="grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {people.map((person, index) => (
+            <div key={person.id} className="h-full">
+              <TiltCard
+                title={person.name}
+                description={person.affiliation}
+                image={person.image}
+                category={person.role}
+                number={String(index + 5).padStart(2, "0")}
+                footerText="IOSC Forum 2026"
+                maxTilt={6}
+                perspective={1000}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =========================
+   Main Organizers Page
+========================= */
 export default function OrganizersPage() {
   const generalChair = seniorOrganizers.find(
     (person) => person.id === "general-chair"
   );
 
-  const programChair = seniorOrganizers.find(
-    (person) => person.id === "program-chair"
+  const programChairs = seniorOrganizers.filter(
+    (person) => person.role === "Program Chair"
   );
 
   const localChair = seniorOrganizers.find(
@@ -680,25 +763,32 @@ export default function OrganizersPage() {
   );
 
   return (
-    <main className="relative isolate min-h-screen overflow-hidden">
+    <main className="relative isolate min-h-screen">
+      {/* Campus Background Image */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-[-2] bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url("${BASE_PATH}/images/campus.jpg")`,
+        }}
+      />
 
-    <div
-    className="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat"
-    style={{
-      backgroundImage: "url('/images/campus.jpg')",
-    }}
-    />
-     <div className="fixed inset-0 -z-10 bg-slate-950/50 backdrop-blur-[6px]" />
-      {/* Page Hero */}
-      <section className="relative overflow-hidden bg-[#071a32] px-6 py-20 text-white md:py-24">
+      {/* Dark Glass Overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-[-1] bg-slate-950/60 backdrop-blur-[4px]"
+      />
+
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#071a32]/75 px-6 py-20 text-white md:py-24">
         <div
           aria-hidden="true"
-          className="absolute -right-20 -top-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl"
+          className="pointer-events-none absolute -right-20 -top-24 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl"
         />
 
         <div
           aria-hidden="true"
-          className="absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"
+          className="pointer-events-none absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-blue-500/15 blur-3xl"
         />
 
         <div className="relative mx-auto max-w-5xl text-center">
@@ -710,7 +800,7 @@ export default function OrganizersPage() {
             Organizers
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-200 md:text-lg">
             Meet the chairs and organizing committee responsible
             for bringing the conference together.
           </p>
@@ -719,7 +809,7 @@ export default function OrganizersPage() {
         </div>
       </section>
 
-      {/* 1. General Chair */}
+      {/* General Chair */}
       <ChairSection
         title="General Chair"
         person={generalChair}
@@ -727,51 +817,24 @@ export default function OrganizersPage() {
         description="Providing overall leadership and direction for the conference."
       />
 
-      {/* 2. Program Chair */}
-      <ChairSection
-        title="Program Chair"
-        person={programChair}
-        number="02"
-        description="Overseeing the technical program and research sessions."
-      />
+      {/* Two Program Chairs */}
+      <ProgramChairsSection people={programChairs} />
 
-      {/* 3. Local Chair */}
+      {/* Local Chair */}
       <ChairSection
         title="Local Chair"
         person={localChair}
-        number="03"
-        description="Coordinating local arrangements and conference activities."
+        number="04"
+        description="Coordinating local arrangements and on-site conference activities."
       />
 
-      {/* 4. Local Organizing Committee */}
-      {/* 4. Local Organizing Committee */}
-<section className="bg-transparent px-6 py-16 md:py-20">
-  <div className="mx-auto max-w-5xl">
-    <SectionHeading
-      title="Local Organizing Committee"
-      description="Meet the committee members supporting the planning and successful organization of IOSC Forum 2026."
-    />
-
-    <div className="grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2">
-      {organizingCommittee.map((person, index) => (
-        <div key={person.id} className="h-full">
-          <TiltCard
-            title={person.name}
-            description={person.affiliation}
-            image={person.image}
-            category={person.role}
-            number={String(index + 4).padStart(2, "0")}
-            footerText="IOSC Forum 2026"
-            maxTilt={6}
-            perspective={1000}
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+      {/* Local Organizing Committee */}
+      <LocalOrganizingCommittee
+        people={organizingCommittee}
+      />
     </main>
   );
 }
+
 
 
