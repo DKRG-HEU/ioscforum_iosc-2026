@@ -1,10 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
 
 const footerLinks = [
-  { label: "About", href: "#about" },
-  { label: "Themes", href: "#themes" },
-  { label: "Speakers", href: "#speakers" },
-  { label: "Programme", href: "#programme" },
+  { label: "Home", href: "/" },
+  { label: "Speakers", href: "/speakers" },
+  { label: "Schedule", href: "/forum-schedule" },
+  { label: "Organizers", href: "/organizing-committee" },
 ];
 
 export default function Footer() {
