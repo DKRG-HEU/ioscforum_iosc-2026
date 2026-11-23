@@ -273,10 +273,10 @@ const speakers = [
     talkNumber: 'To be announced',
     startTime: '',
     endTime: '',
-    talkTitle: 'Talk title to be announced',
+    talkTitle: 'Preserving What Matters for Reliable Human-centric Perception',
     introduction:
-      'Develops machine-learning methods for wearable sensing, behaviour analysis, computer vision, multimodal sensing, and healthcare.',
-    abstract: 'Talk abstract to be announced.',
+      'Dr. Yu Guan is an Associate Professor in the Department of Computer Science at the University of Warwick, UK, where he leads the Ubiquitous and Visual Computing Lab (UVLab). He received his PhD from Warwick in 2015 and subsequently held research and lecturing positions at Newcastle University before returning to Warwick in 2022. His research focuses on machine learning for human behaviour analysis, multimodal sensing, and healthcare applications, spanning wearable computing,mmWave sensing, computer vision, and vision-language models. He is particularly interested in developing robust methods that connect physical and structural knowledge with learning from real￾world data. He has published more than 80 peer-reviewed papers including top-tier ML/CV venues such as IEEE Trans PAMI, ICML, CVPR/ICCV/ECCV, ACL, IMWUT, etc. and serves as an Associate Editor of ACM IMWUT',
+    abstract: 'Reliable human perception requires models to preserve informative observations and use complementary cues appropriately. In practice, this is challenging when measurements are noisy, observations are incomplete, and computational resources are limited. Drawing on recent advances in mmWave sensing and video understanding, this talk explores how the preservation and use of evidence can guide the design of more reliable perception systems. I will discuss how physical and structural knowledge can help distinguish human-related information from interference, and how motion cues and language can support prediction while maintaining a strong connection to observed data. I will also examine how to reduce computational cost while retaining the information needed to understand human activities over time. These studies offer a common perspective on representation design, information integration, and efficient inference, highlighting how explicit treatment of evidence can improve accuracy, temporal stability, and computational efficiency in human perceptio',
     image: `${BASE_PATH}/images/speakers/yu-guan.jpeg`,
     href: 'https://warwick.ac.uk/fac/sci/dcs/people/yu_guan/',
   },
