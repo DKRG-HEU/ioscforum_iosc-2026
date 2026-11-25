@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-
+import Link from "next/link";
+import Image from "next/image";
 const footerLinks = [
   { label: "Home", href: "/" },
   { label: "Speakers", href: "/speakers" },
@@ -24,7 +25,6 @@ export default function Footer() {
           </a> */}
           <Link
           href="/"
-          onClick={closeMenus}
           aria-label="IOSC Forum home"
           className="relative z-10 flex items-center"
         >
