@@ -1,106 +1,85 @@
-// 'use client';
+// "use client";
 
-// import { useState } from 'react';
-// import Link from 'next/link';
+// import { useState } from "react";
+// import Link from "next/link";
+// import Image from "next/image";
 // import {
 //   Menu,
 //   X,
 //   ArrowUpRight,
-//   ChevronDown,
 //   Waves,
 // } from "lucide-react";
-// const links = [
-//   // { label: 'About', href: '/#about', section: true },
-//   // { label: 'Themes', href: '/#themes', section: true },
-//   { label: 'Home', href: '/' },
-//   { label: 'Speakers', href: '/speakers' },
-//   { label: 'Schedule', href: '/forum-schedule' },
-//   { label: 'Organizers', href: '/organizing-committee' },
-//   // { label: 'Programme', href: '/#programme', section: true },
-// ];
 
-// // const attendingLinks = [
-// //   { label: 'Overview', href: '/attending' },
-// //   { label: 'Visa Information', href: '/attending/visa-information' },
-// //   { label: 'Registration', href: '/attending/registration' },
-// //   { label: 'Accommodation & Travel', href: '/attending/accommodation-travel' },
-// // ];
+// const links = [
+//   { label: "Home", href: "/" },
+//   { label: "Speakers", href: "/speakers" },
+//   { label: "Schedule", href: "/forum-schedule" },
+//   { label: "Organizers", href: "/organizing-committee" },
+// ];
 
 // export default function Navbar() {
 //   const [open, setOpen] = useState(false);
-//   const [attendingOpen, setAttendingOpen] = useState(false);
-//   const [cursor, setCursor] = useState({ x: 0, y: 0 });
-//   const [hovering, setHovering] = useState(false);
 
 //   const closeMenus = () => {
 //     setOpen(false);
-//     setAttendingOpen(false);
-//   };
-
-//   const handleMouseMove = (event) => {
-//     const rect = event.currentTarget.getBoundingClientRect();
-
-//     setCursor({
-//       x: event.clientX - rect.left,
-//       y: event.clientY - rect.top,
-//     });
 //   };
 
 //   const desktopLinkClass =
-//     'group relative py-2 text-sm text-white/75 transition-colors duration-300 hover:text-white';
+//     "group relative py-2 text-sm text-white/75 transition-colors duration-300 hover:text-white";
 
 //   const mobileLinkClass =
-//     'border-b border-white/10 py-3 text-sm text-white/80 transition hover:pl-2 hover:text-cyan-200';
+//     "border-b border-white/10 py-3 text-sm text-white/80 transition hover:pl-2 hover:text-cyan-200";
 
 //   return (
 //     <header
-//     onMouseMove={handleMouseMove}
-//     onMouseEnter={() => setHovering(true)}
-//     onMouseLeave={() => setHovering(false)}
-//     className="absolute inset-x-0 top-0 z-50
-//     border-b border-white/10 bg-[#031426]/25
-//     text-white backdrop-blur-md"
-//    >
-//       {/* Decorative cursor */}
-//       <span
-//         aria-hidden="true"
-//         className="pointer-events-none absolute z-50 hidden h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_16px_rgba(253,224,71,0.7)] transition-opacity duration-200 md:block"
-//         style={{
-//           left: cursor.x,
-//           top: cursor.y,
-//           opacity: hovering ? 1 : 0,
-//           transform: 'translate(-50%, -50%)',
-//         }}
-//       />
-
+//       className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-[#031426]/25 text-white backdrop-blur-md"
+//     >
 //       <nav
 //         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12"
 //         aria-label="Main navigation"
 //       >
 //         {/* University branding */}
-//         <Link
-//         href="/"
-//         onClick={closeMenus}
-//         aria-label="IOSC Forum home"
-//         className="group relative z-10 flex items-center gap-3"
-//       >
-//         <span className="grid h-11 w-11 place-items-center
-//           rounded-full border border-cyan-300/60
-//           bg-cyan-400/10 text-cyan-300 transition
-//           group-hover:bg-cyan-300 group-hover:text-slate-950">
-//           <Waves size={25} />
-//         </span>
+//         {/* <Link
+//           href="/"
+//           onClick={closeMenus}
+//           aria-label="IOSC Forum home"
+//           className="group relative z-10 flex items-center gap-3"
+//         >
+//           <span
+//             className="grid h-11 w-11 place-items-center rounded-full border border-cyan-300/60 bg-cyan-400/10 text-cyan-300 transition group-hover:bg-cyan-300 group-hover:text-slate-950"
+//           >
+//             <Waves size={25} />
+//           </span>
 
-//         <span className="leading-tight">
-//           <span className="block text-xl font-semibold tracking-tight">
-//             IOSC Forum
+//           <span className="leading-tight">
+//             <span className="block text-xl font-semibold tracking-tight">
+//               IOSC Forum
+//             </span>
+
+//             <span className="mt-1 block text-[9px] uppercase tracking-[0.16em] text-white/60">
+//               Intelligent Ocean Sensing & Computing
+//             </span>
 //           </span>
-//           <span className="mt-1 block text-[9px] uppercase
-//             tracking-[0.16em] text-white/60">
-//             Intelligent Ocean Sensing & Computing
-//           </span>
-//         </span>
-//       </Link>
+//         </Link> */}
+
+
+// {/* University branding */}
+// <Link
+//   href="/"
+//   onClick={closeMenus}
+//   aria-label="IOSC Forum home"
+//   className="relative z-10 flex items-center"
+// >
+//   <Image
+//     src="/images/iosc-logo.png"
+//     alt="IOSC Forum Logo"
+//     width={180}
+//     height={70}
+//     priority
+//     className="h-14 w-auto object-contain"
+//   />
+// </Link>
+
 
 //         {/* Desktop navigation */}
 //         <div className="hidden items-center gap-7 md:flex">
@@ -111,67 +90,18 @@
 //               className={desktopLinkClass}
 //             >
 //               {link.label}
+
 //               <span className="absolute inset-x-0 bottom-0 h-[2px] origin-left scale-x-0 bg-yellow-300 transition-transform duration-300 ease-out group-hover:scale-x-100" />
 //             </Link>
 //           ))}
 
-//           {/* Attending dropdown */}
-//           {/* <div
-//             className="relative"
-//             onMouseEnter={() => setAttendingOpen(true)}
-//             onMouseLeave={() => setAttendingOpen(false)}
-//           >
-//             <button
-//               type="button"
-//               onClick={() => setAttendingOpen((value) => !value)}
-//               onKeyDown={(event) => {
-//                 if (event.key === 'Escape') setAttendingOpen(false);
-//               }}
-//               aria-expanded={attendingOpen}
-//               aria-haspopup="true"
-//               className={`${desktopLinkClass} inline-flex items-center gap-1.5`}
-//             >
-//               Attending
-//               <ChevronDown
-//                 size={15}
-//                 className={`transition-transform duration-200 ${
-//                   attendingOpen ? 'rotate-180' : ''
-//                 }`}
-//               />
-//               <span className="absolute inset-x-0 bottom-0 h-[2px] origin-left scale-x-0 bg-yellow-300 transition-transform duration-300 group-hover:scale-x-100" />
-//             </button>
-
-//             <div
-//               className={`absolute right-0 top-full w-64 pt-4 transition-all duration-200 ${
-//                 attendingOpen
-//                   ? 'visible translate-y-0 opacity-100'
-//                   : 'invisible -translate-y-2 opacity-0'
-//               }`}
-//             >
-//               <div className="overflow-hidden rounded-xl border border-white/10 bg-[#071a32] p-2 shadow-2xl shadow-black/30">
-//                 {attendingLinks.map((item) => (
-//                   <Link
-//                     key={item.href}
-//                     href={item.href}
-//                     onClick={closeMenus}
-//                     tabIndex={attendingOpen ? 0 : -1}
-//                     className="block rounded-lg px-4 py-3 text-sm text-white/75 transition hover:bg-white/5 hover:text-cyan-200"
-//                   >
-//                     {item.label}
-//                   </Link>
-//                 ))}
-//               </div>
-//             </div>
-//           </div> */}
-
+//           {/* Join the forum */}
 //           <Link
 //             href="/#register"
-//             className="group inline-flex items-center gap-2
-//   rounded-full border border-cyan-300/60
-//   bg-white/5 px-5 py-3 text-sm font-medium
-//   text-white backdrop-blur-md transition
-//   hover:bg-cyan-300 hover:text-slate-950">
+//             className="group inline-flex items-center gap-2 rounded-full border border-cyan-300/60 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-cyan-300 hover:text-slate-950"
+//           >
 //             Join the forum
+
 //             <ArrowUpRight
 //               size={16}
 //               className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -183,7 +113,11 @@
 //         <button
 //           type="button"
 //           className="relative z-10 rounded-lg border border-white/20 p-2 transition hover:border-cyan-300 hover:text-cyan-200 md:hidden"
-//           aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+//           aria-label={
+//             open
+//               ? "Close navigation menu"
+//               : "Open navigation menu"
+//           }
 //           aria-expanded={open}
 //           onClick={() => setOpen((value) => !value)}
 //         >
@@ -194,7 +128,9 @@
 //       {/* Mobile navigation */}
 //       <div
 //         className={`grid transition-[grid-template-rows,opacity] duration-300 md:hidden ${
-//           open ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+//           open
+//             ? "grid-rows-[1fr] opacity-100"
+//             : "grid-rows-[0fr] opacity-0"
 //         }`}
 //         aria-hidden={!open}
 //       >
@@ -212,8 +148,6 @@
 //                   {link.label}
 //                 </Link>
 //               ))}
-
-             
 
 //               <Link
 //                 href="/#register"
@@ -233,16 +167,15 @@
 // }
 
 
-
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Menu,
   X,
   ArrowUpRight,
-  Waves,
 } from "lucide-react";
 
 const links = [
@@ -260,45 +193,39 @@ export default function Navbar() {
   };
 
   const desktopLinkClass =
-    "group relative py-2 text-sm text-white/75 transition-colors duration-300 hover:text-white";
+    "group relative py-2 text-sm font-medium text-slate-200/85 transition-colors duration-300 hover:text-cyan-300";
 
   const mobileLinkClass =
-    "border-b border-white/10 py-3 text-sm text-white/80 transition hover:pl-2 hover:text-cyan-200";
+    "border-b border-cyan-100/10 py-4 text-sm font-medium text-slate-200 transition-all duration-300 hover:pl-2 hover:text-cyan-300";
 
   return (
-    <header
-      className="absolute inset-x-0 top-0 z-50 border-b border-white/10 bg-[#031426]/25 text-white backdrop-blur-md"
-    >
+    <header className="absolute inset-x-0 top-0 z-50 border-b border-cyan-300/20 bg-[#061B32]/95 text-white shadow-lg shadow-slate-950/10 backdrop-blur-xl">
+
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12"
+        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12"
         aria-label="Main navigation"
       >
-        {/* University branding */}
+
+        {/* IOSC Forum Logo */}
         <Link
           href="/"
           onClick={closeMenus}
           aria-label="IOSC Forum home"
-          className="group relative z-10 flex items-center gap-3"
+          className="relative z-10 flex items-center"
         >
-          <span
-            className="grid h-11 w-11 place-items-center rounded-full border border-cyan-300/60 bg-cyan-400/10 text-cyan-300 transition group-hover:bg-cyan-300 group-hover:text-slate-950"
-          >
-            <Waves size={25} />
-          </span>
-
-          <span className="leading-tight">
-            <span className="block text-xl font-semibold tracking-tight">
-              IOSC Forum
-            </span>
-
-            <span className="mt-1 block text-[9px] uppercase tracking-[0.16em] text-white/60">
-              Intelligent Ocean Sensing & Computing
-            </span>
-          </span>
+          <Image
+            src="/images/iosc-logo-1.png"
+            alt="IOSC Forum Logo"
+            width={420}
+            height={180}
+            priority
+            className="h-20 w-auto object-contain"
+          />
         </Link>
 
-        {/* Desktop navigation */}
-        <div className="hidden items-center gap-7 md:flex">
+        {/* Desktop Navigation */}
+        <div className="hidden items-center gap-8 md:flex">
+
           {links.map((link) => (
             <Link
               key={link.label}
@@ -307,16 +234,16 @@ export default function Navbar() {
             >
               {link.label}
 
-              <span className="absolute inset-x-0 bottom-0 h-[2px] origin-left scale-x-0 bg-yellow-300 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+              <span className="absolute inset-x-0 -bottom-1 h-[2px] origin-left scale-x-0 rounded-full bg-cyan-300 transition-transform duration-300 group-hover:scale-x-100" />
             </Link>
           ))}
 
-          {/* Join the forum */}
+          {/* Join Forum Button */}
           <Link
             href="/#register"
-            className="group inline-flex items-center gap-2 rounded-full border border-cyan-300/60 bg-white/5 px-5 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-cyan-300 hover:text-slate-950"
+            className="group inline-flex items-center gap-2 rounded-full border border-cyan-300/50 bg-gradient-to-r from-cyan-400 to-sky-400 px-5 py-3 text-sm font-semibold text-[#04182B] shadow-lg shadow-cyan-950/20 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-200 hover:from-cyan-300 hover:to-sky-300 hover:shadow-cyan-400/20"
           >
-            Join the forum
+            Join the Forum
 
             <ArrowUpRight
               size={16}
@@ -325,14 +252,12 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
-          className="relative z-10 rounded-lg border border-white/20 p-2 transition hover:border-cyan-300 hover:text-cyan-200 md:hidden"
+          className="relative z-10 rounded-xl border border-cyan-300/30 bg-white/5 p-2.5 text-cyan-100 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-300/10 hover:text-cyan-300 md:hidden"
           aria-label={
-            open
-              ? "Close navigation menu"
-              : "Open navigation menu"
+            open ? "Close navigation menu" : "Open navigation menu"
           }
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
@@ -341,7 +266,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile navigation */}
+      {/* Mobile Navigation */}
       <div
         className={`grid transition-[grid-template-rows,opacity] duration-300 md:hidden ${
           open
@@ -351,8 +276,9 @@ export default function Navbar() {
         aria-hidden={!open}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-white/10 bg-[#071a32] px-5 py-5 sm:px-8">
+          <div className="border-t border-cyan-300/15 bg-[#061B32] px-5 py-5 sm:px-8">
             <div className="mx-auto flex max-w-7xl flex-col">
+
               {links.map((link) => (
                 <Link
                   key={link.label}
@@ -369,11 +295,12 @@ export default function Navbar() {
                 href="/#register"
                 tabIndex={open ? 0 : -1}
                 onClick={closeMenus}
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-yellow-300"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-400 px-5 py-3.5 text-sm font-semibold text-[#04182B] shadow-lg shadow-cyan-950/20 transition-all duration-300 hover:from-cyan-300 hover:to-sky-300"
               >
-                Join the forum
-                <ArrowUpRight size={16} />
+                Join the Forum
+                <ArrowUpRight size={17} />
               </Link>
+
             </div>
           </div>
         </div>
@@ -381,3 +308,4 @@ export default function Navbar() {
     </header>
   );
 }
+

@@ -476,11 +476,12 @@ export default function Hero() {
           MAIN HERO CONTENT
       ========================================== */}
       <div
-        className="relative z-10 mx-auto flex max-w-7xl
-          flex-col justify-center px-6 pb-28 pt-16
-          sm:pt-20 lg:min-h-[calc(100vh-100px)]
-          lg:px-12 lg:pb-32 lg:pt-8"
-      >
+          className="relative z-10 mx-auto flex max-w-7xl
+              flex-col justify-center px-6 pb-28
+              pt-36 sm:pt-40
+              lg:min-h-[calc(100vh-100px)]
+              lg:px-12 lg:pb-32 lg:pt-40"
+          >
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <div

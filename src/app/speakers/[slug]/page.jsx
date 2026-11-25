@@ -218,14 +218,14 @@ export default async function SpeakerDetailPage({ params }) {
 
         {/* Return to speakers */}
         <div className="mt-12 text-center">
-          <Link
-            href="/speakers/"
-            className="inline-flex items-center gap-2 rounded-full bg-[#071b32] px-7 py-3.5 font-semibold text-white transition hover:bg-cyan-800"
-          >
-            <ArrowLeft size={17} />
-            Explore all speakers
-          </Link>
-        </div>
+  <Link
+    href="/speakers/"
+    className="inline-flex items-center gap-2 rounded-full bg-[#071b32] px-7 py-3.5 font-semibold !text-white transition-colors hover:bg-cyan-800 hover:!text-white"
+  >
+    <ArrowLeft size={17} />
+    Explore all speakers
+  </Link>
+</div>
       </section>
     </main>
   );
