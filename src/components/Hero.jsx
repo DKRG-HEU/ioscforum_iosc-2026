@@ -344,6 +344,8 @@ import {
   Activity,
 } from "lucide-react";
 
+
+
 export default function Hero() {
   const heroRef = useRef(null);
 

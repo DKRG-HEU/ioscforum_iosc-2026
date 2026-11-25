@@ -185,6 +185,11 @@ const links = [
   { label: "Organizers", href: "/organizing-committee" },
 ];
 
+
+const BASE_PATH =
+  process.env.NODE_ENV === "production"
+    ? "/ioscforum_iosc-2026"
+    : "";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -214,7 +219,7 @@ export default function Navbar() {
           className="relative z-10 flex items-center"
         >
           <Image
-            src="/images/iosc-logo-1.png"
+            src={`${BASE_PATH}/images/iosc-logo-1.png`}
             alt="IOSC Forum Logo"
             width={420}
             height={180}
