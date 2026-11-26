@@ -16,7 +16,7 @@ export const seniorOrganizers = [
     affiliation: "Harbin Engineering University",
     image: organizerImage("Zhiwen Yu.png"),
     description:
-      "Providing overall leadership and direction for IOSC Forum 2026.",
+      "Providing overall leadership and direction for 2nd International IOSC Forum 2026.",
   },
 
   // Program Chairs
@@ -27,7 +27,7 @@ export const seniorOrganizers = [
     affiliation: "Harbin Engineering University",
     image: organizerImage("Dapeng Man.png"),
     description:
-      "Supporting the technical program and academic activities of the forum.",
+        "Overseeing the technical program, coordinating academic sessions, and supporting invited-speaker activities for  2nd International IOSC Forum 2026.",
   },
   {
     id: "program-chair-02",
@@ -36,7 +36,7 @@ export const seniorOrganizers = [
     affiliation: "Harbin Engineering University",
     image: organizerImage("Naixue Xiong.jpg"),
     description:
-      "Supporting the technical program and academic activities of the forum.",
+      "Supporting the technical program and academic activities of the 2nd International IOSC Forum 2026..",
   },
   {
     id: "program-chair-03",
@@ -45,7 +45,7 @@ export const seniorOrganizers = [
     affiliation: "Harbin Engineering University",
     image: organizerImage("Wei Li.png"),
     description:
-      "Supporting the technical program and academic activities of the forum.",
+      "Supporting the technical program and academic activities of the 2nd International IOSC Forum 2026.",
   },
 
   // Local Chairs
@@ -56,7 +56,7 @@ export const seniorOrganizers = [
     affiliation: "Harbin Engineering University",
     image: organizerImage("吕宏武-Hongwu Lv.jpg"),
     description:
-      "Supporting local arrangements and on-site forum activities.",
+  "Coordinating venue arrangements, accommodation, transportation, and on-site event activities.",
   },
   {
     id: "local-chair-02",

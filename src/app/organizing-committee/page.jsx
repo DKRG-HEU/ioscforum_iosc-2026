@@ -256,9 +256,9 @@ const BASE_PATH =
     : "";
 
 export const metadata = {
-  title: "Organizers | IOSC Forum 2026",
+  title: "Organizers |   2nd International IOSC Forum 2026.",
   description:
-    "Meet the chairs and organizing committee of IOSC Forum 2026 at Harbin Engineering University.",
+    "Meet the chairs and organizing committee of 2nd International IOSC Forum 2026 at Harbin Engineering University.",
 };
 
 /* =========================
@@ -313,8 +313,9 @@ function GeneralChairSection({ person }) {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="General Chair"
-          description="Providing overall leadership and direction for IOSC Forum 2026."
+          description="Providing strategic leadership and overseeing the overall organization of  2nd International IOSC Forum 2026."
         />
+        
 
         <OrganizerCard person={person} number="01" />
       </div>
@@ -369,7 +370,7 @@ function LocalOrganizingCommittee({ people }) {
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           title="Local Organizing Committee"
-          description="Meet the committee members supporting the planning and successful organization of IOSC Forum 2026."
+          description="Meet the committee members supporting the planning and successful organization of 2nd International IOSC Forum 2026."
         />
 
         <div className="grid grid-cols-1 items-stretch gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -434,7 +435,7 @@ export default function OrganizersPage() {
 
         <div className="relative mx-auto max-w-5xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
-            IOSC Forum 2026
+           2nd International IOSC Forum 2026
           </p>
 
           <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
@@ -443,7 +444,7 @@ export default function OrganizersPage() {
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-200 md:text-lg">
             Meet the chairs and organizing committee responsible
-            for bringing IOSC Forum 2026 together.
+            for bringing 2nd International IOSC Forum 2026 together.
           </p>
 
           <div className="mx-auto mt-8 h-1 w-20 rounded-full bg-cyan-400" />
@@ -479,7 +480,7 @@ export default function OrganizersPage() {
       {/* Bottom Section */}
       <section className="border-t border-white/10 bg-[#071a32]/80 px-6 py-12 text-center backdrop-blur-md">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
-          IOSC Forum 2026
+          2nd International IOSC Forum 2026
         </p>
 
         <p className="mt-3 text-sm text-slate-300">

@@ -143,9 +143,12 @@ const BASE_PATH =
     ? "/ioscforum_iosc-2026"
     : "";
 
+
 export const forumDetails = {
-  title: "Forum Schedule",
-  subtitle: "& Event Information",
+  title: "The 2nd International Forum on Intelligent Ocean Sensing and Computing",
+  chineseTitle: "第二届智能海洋感知与计算国际论坛",
+  shortTitle: "IOSC Forum 2026",
+  subtitle: "Forum Schedule & Event Information",
   institution: "Harbin Engineering University",
   eventDates: "November 27–29, 2026",
   mainForumDate: "November 28–29, 2026",
@@ -153,6 +156,7 @@ export const forumDetails = {
     "November 28: 08:00–20:00 | November 29: 08:30–13:00",
   venue: "Qihang Teacher Salon",
 };
+
 
 // Complete conference programme
 export const detailedSchedule = [

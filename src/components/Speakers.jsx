@@ -640,7 +640,7 @@ export default function Speakers() {
 
       <div className="gallery-viewport relative flex min-h-[720px] w-full flex-col items-center justify-center overflow-hidden py-20 md:min-h-[800px]">
         {/* Section heading */}
-        <div className="absolute left-5 right-5 top-12 z-20 mx-auto max-w-3xl text-center md:top-16">
+        {/* <div className="absolute left-5 right-5 top-12 z-20 mx-auto max-w-3xl text-center md:top-16">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300 md:text-sm">
             IOSC Forum 2026 · Research & Innovation
           </p>
@@ -653,6 +653,21 @@ export default function Speakers() {
             Discover the researchers and thought leaders
             shaping the future of ubiquitous computing,
             connected systems, and intelligent technologies.
+          </p>
+        </div> */}
+        <div className="absolute left-5 right-5 top-12 z-20 mx-auto max-w-3xl text-center md:top-16">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300 md:text-sm">
+            The 2nd IOSC Forum · 2026
+          </p>
+
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            Invited Speakers
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-300 md:text-base">
+            Meet distinguished researchers and experts advancing
+            intelligent ocean sensing, marine observation,
+            underwater systems, and innovative computing technologies.
           </p>
         </div>
 

@@ -506,8 +506,11 @@ export default function Hero() {
               />
             </span>
 
-            INTERNATIONAL FORUM · 2026
+            The 2nd International Forum on Intelligent Ocean Sensing and Computing
           </div>
+           {/* <p className="mt-3 text-sm font-medium tracking-wide text-white/70">
+  第二届智能海洋感知与计算国际论坛
+</p> */}
 
           {/* Heading */}
           {/* Heading */}
@@ -547,9 +550,10 @@ export default function Hero() {
               text-base leading-7 text-slate-300
               sm:text-lg sm:leading-8"
           >
-            Connecting ocean observation, autonomous underwater
-            systems, and intelligent computing to understand
-            the ocean and support sustainable marine futures.
+            Bringing together researchers, academics, and industry
+            experts to advance intelligent ocean sensing, marine
+            observation, underwater systems, and cutting-edge
+            computing technologies for sustainable ocean development.
           </p>
 
           {/* Actions */}

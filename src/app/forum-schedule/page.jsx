@@ -463,9 +463,11 @@ import {
 } from "@/app/data/forumSchedule";
 
 export const metadata = {
-  title: "Forum Schedule | IOSC Forum 2026",
+  title:
+    "Forum Schedule | The 2nd International Forum on Intelligent Ocean Sensing and Computing",
+
   description:
-    "Official schedule and event information for IOSC Forum 2026 at Harbin Engineering University.",
+    "Official programme, venue, accommodation, transportation and meal information for the 2nd International Forum on Intelligent Ocean Sensing and Computing, November 27–29, 2026, at Harbin Engineering University.",
 };
 
 // --------------------------------------------------
@@ -740,7 +742,7 @@ export default function ForumSchedulePage() {
               {forumDetails.eventDates}
             </div>
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
+            {/* <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
               {forumDetails.institution}
             </p>
 
@@ -749,6 +751,26 @@ export default function ForumSchedulePage() {
 
               <span className="mt-2 block text-cyan-300">
                 {forumDetails.subtitle}
+              </span>
+            </h1> */}
+
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              {forumDetails.institution}
+            </p>
+
+            <p className="mb-3 text-sm leading-6 text-white/70">
+              {forumDetails.title}
+            </p>
+
+            <p className="mb-8 text-sm text-white/60">
+              {forumDetails.chineseTitle}
+            </p>
+
+            <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+              Forum Schedule
+
+              <span className="mt-2 block text-cyan-300">
+                & Event Information
               </span>
             </h1>
 
